@@ -12,7 +12,7 @@
 namespace MW_args {
     inline int args_string(int & i, const int argc, std::string * argstr, std::string & args_string)
     {
-    	int Flag = 0;
+        int Flag = 0;
     
         if(++i<argc)
         {
@@ -25,24 +25,24 @@ namespace MW_args {
             Flag = 1;
         }
     
-    	return Flag;
+        return Flag;
     }
     
     inline int args_bool(int & i, const int argc, std::string * argstr, bool & args_bool)
     {
-    	int Flag = 0;
+        int Flag = 0;
     
         if(++i<argc)
         {
             transform(argstr[i].begin(), argstr[i].end(), argstr[i].begin(), tolower);
             if(argstr[i]=="true")
-    		{
+            {
                 args_bool = true;
-    		}
+            }
             else if(argstr[i]=="false")
-    		{
+            {
                 args_bool = false;
-    		}
+            }
             else
             {
                 std::cout << "Invalid argument specified for option " << argstr[i-1] << ", must be \"true\" or \"false\"!\n";
@@ -57,7 +57,7 @@ namespace MW_args {
             Flag = 1;
         }
     
-    	return Flag;
+        return Flag;
     }
 }
 
