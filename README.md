@@ -2,7 +2,7 @@ zonestool
 =========
 
 Generate x264 --zones parameter for OP/ED according to chapter and qpfile
-=========
+---------
 
 Instruction for zonestool
 
