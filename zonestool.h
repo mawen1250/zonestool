@@ -1,5 +1,5 @@
-#ifndef _MW_ZONESTOOL_H_
-#define _MW_ZONESTOOL_H_
+#ifndef MW_ZONESTOOL_H_
+#define MW_ZONESTOOL_H_
 
 
 #include <string>
@@ -11,25 +11,29 @@ const int MAX_CHAP_NUM = 1024;
 const int LAST_CHAP_FRAME_COUNT = 5000;
 
 
-namespace MW_zonestool {
-    struct ARGS {
-        // Input
-        std::string chapter;
-        std::string qpfile;
-        std::string output;
-        bool append;
-        std::string op;
-        std::string ed;
-        // Output
-        std::string zones;
-    };
-    
-    int stdout_help();
-    int args_get(int argc, char ** argv, ARGS * args);
+namespace mw {
+namespace zonestool {
 
-    int zones_get(ARGS * args);
-    int zones_write(ARGS * args);
-}
+struct ARG {
+    // Input
+    std::string chapter = "";
+    std::string qpfile = "";
+    std::string output = "";
+    bool append = true;
+    std::string op = "";
+    std::string ed = "";
+    // Output
+    std::string zones = "";
+};
+
+int stdout_help();
+int args_get(int argc, char ** argv, ARG & arg);
+
+int zones_get(ARG & arg);
+int zones_write(ARG & arg);
+
+} // namespace zonestool
+} // namespace mw
 
 
 #endif
